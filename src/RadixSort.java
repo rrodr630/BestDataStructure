@@ -1,5 +1,9 @@
 import java.util.ArrayList;
-
+/*
+This is an unfinished feature of the project where I am trying to create a unique sorting algorithms similar tot he radix sort. I just
+felt like sharing it, it sorts the input list, but I am still trying to figure out how to return the sorted list. This algo also sorts
+negative values.
+*/
 public class RadixSort {
     private ArrayList<DoubleLinkedList<Integer>> myList = new ArrayList<>();
     private int[] arr;
