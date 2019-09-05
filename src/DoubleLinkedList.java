@@ -1,3 +1,7 @@
+/*
+Author: Robert Rodriguez. Student at FIU.
+Date: 9/5/2019
+*/
 class DoubleLinkedList<T> {
 
     protected Node<T> head, tail;
