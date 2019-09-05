@@ -22,16 +22,15 @@ partitions and this in Mathematics is called sqrt(N), sqrt(100) = 10, thus the c
 O(sqrt(N)) which is not exactly the same as O(logN), but it is much faster than linear.
 
 Now, there is another operation we need to do, after we inserted an element in index 59, now we increased the range between nodes 50 and 60
-and we need to do somethign about this, because the range must be a fix size in order to obtain this complexity (think if the size keeps 
+and we need to do something about this, because the range must be a fix size in order to obtain this complexity (think if the size keeps 
 increasing the amount of operations wont be equivalent to sqrt(N)). This is when I introduced a private method called percoletaUp and 
 percolateDown. For this case after we inserted an element at index 59, which we used node at arr[4] to get there in sublinear time, now we
-need to go up the list, from arr[5] to arr[9] and "move back" 1 position this node (arr[4] = arr[4].back ), now we fixed this! How, ever 
+need to go up the list, from arr[5] to arr[9] and "move back" 1 position this node (arr[4] = arr[4].back ), now we fixed this! However, 
 this introduced more operations in add/remove complexity that ultimatelly won't change it, but it is worth mentioning it. 
 
 From the previous notes we stated that for each add/remove we separate this operations in two steps: one is to get thru the arr[4] and 
 iterate 9 times and the second one is to percolateUp or down the list to update or fix the range, each of these two operations takes
-O(sqrt(N)) because the range and the size of the arr (which is equals the to total amount of partitions) are the same (both equals 10) and
-10 is sqrt(N).
+O(sqrt(N)) because the range and the size of the arr (which is equals the to total amount of partitions) are the same (both equals 10) and 10 is sqrt(N). O(sqrt(n) + sqrt(n)) = O(sqrt(n)).
 
 If you made it this far I am so glad that you are interested in this project. I cannot describe with words how glad I am to share it and I 
 hope this gets somewhere. Also, the actual code is easier to understand than all these notes.
