@@ -1,7 +1,3 @@
-/*
-Author: Robert Rodriguez. Student at FIU.
-Date: 9/5/2019
-*/
 class DoubleLinkedList<T> {
 
     protected Node<T> head, tail;
@@ -41,8 +37,8 @@ class DoubleLinkedList<T> {
         }
     }
 
-    Node addBack(T newValue) {
-
+    Node addBack(T newValue)
+    {
         Node<T> node = new Node<>(newValue);
 
         if(head == null) {
@@ -50,8 +46,8 @@ class DoubleLinkedList<T> {
             tail = node;
             size += 1;
             return head;
-        } else {
-
+        } else
+            {
             tail.next = node;
             node.back = tail;
             tail = node;
@@ -82,18 +78,18 @@ class DoubleLinkedList<T> {
                 index--;
             }
 
-
             node.next = iterator;
             node.back = iterator.back;
             iterator.back.next = node;
             iterator.back = node;
 
             size++;
-        }else {
-
+        }else
+            {
             Node<T> wormholeIterator = wormhole;
 
-            while (index > 0) {
+            while (index > 0)
+            {
                 wormholeIterator = wormholeIterator.next;
                 index--;
             }
@@ -109,8 +105,8 @@ class DoubleLinkedList<T> {
     }
 
     //Temporary remove method to implement radixSort, may have to do changes latter
-    public T removeFirst() {
-
+    public T removeFirst() 
+    {
         T value = head.info;
 
         if(size == 0)
@@ -132,14 +128,12 @@ class DoubleLinkedList<T> {
         }
     }
 
-    protected void removeLast() {
-
+    protected void removeLast() 
+    {
         tail = tail.back;
         tail.next = null;
         size--;
-
     }
-
 
     protected void removeAt(int index, Node wormhole) {
 
@@ -164,18 +158,13 @@ class DoubleLinkedList<T> {
                 iterator = iterator.next;
                 index--;
             }
-
             //Deleting node
             iterator.back.next = iterator.next;
             iterator.next.back = iterator.back;
 
             size--;
         }
-
-
-
     }
-
 
     String print()
     {
@@ -183,22 +172,19 @@ class DoubleLinkedList<T> {
             return null;
 
         Node<T> iterator = head;
-        String msg = "";
 
+        // Initial size: assuming every node contains a 1 digit number plus the comma and space to separate them.
+        StringBuilder msg = new StringBuilder(size * 3);
 
-        while (iterator.next != null) {
-
-            msg += iterator.info.toString() + ", ";
+        while (iterator.next != null)
+        {
+            msg.append(iterator.info.toString()).append(", ");
             iterator = iterator.next;
-
         }
+        msg.append(iterator.info.toString());
 
-        msg += iterator.info.toString();
-
-        return msg;
+        return msg.toString();
     }
-
-
 
     String printReverse() {
 
@@ -206,16 +192,16 @@ class DoubleLinkedList<T> {
             return null;
 
         Node<T> iterator = tail;
-        String msg = "";
+        StringBuilder msg = new StringBuilder(size * 3);
 
-        while (iterator.back != null) {
-            msg += iterator.info.toString() + ", ";
+        while (iterator.back != null)
+        {
+            msg.append(iterator.info.toString()).append(", ");
             iterator = iterator.back;
         }
+        msg.append(head.info.toString());
 
-        msg += head.info.toString();
-
-        return msg;
+        return msg.toString();
     }
 
     protected class Node <E>
@@ -234,7 +220,6 @@ class DoubleLinkedList<T> {
             back = null;
         }
 
-        //MAY DELETE AFTER FINISH TESTING!!!!!!!!!!!!!!!!!!
         public E getInfo() {
             return info;
         }
