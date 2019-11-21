@@ -17,4 +17,4 @@ Now, there is another operation we need to do, after we inserted an element in i
 Even if this introduced more operations to add/remove methods, that ultimatelly won't change its complexity, but it is important to lay down why: 
 For each add/remove, we separate this operations in two steps: one is to get through the arr[5] and iterate 9 times and the second one is to percolateUp or down the list to update or fix the amount of nodes btw each node saved in the array, each of these two operations takes O(sqrt(n)) because the distance btw each "special node" and the size of the arr are the same (both equals 10) and 10 is sqrt(n). O(sqrt(n) + sqrt(n)) = O(sqrt(n)).
 
-It was very challenging to try explain this project in a document. However, I have more documentation on the java files and I beleive the project itself is somewhat self-explanatory and the code is nice to the eye.
+It was very challenging to try explain this project in a document. However, I have more documentation on the java files and I believe the project itself is somewhat self-explanatory and the code is nice to the eye.
