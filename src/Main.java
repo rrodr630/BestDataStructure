@@ -1,7 +1,7 @@
 public class Main {
     public static void main(String[] args) {
 
-        SuperDS<Integer> test = new SuperDS<>(5, 100);
+        SuperDS<Integer> test = new SuperDS<>();
 
 
         test.addAt(0,0);
